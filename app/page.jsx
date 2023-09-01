@@ -11,9 +11,9 @@ const Home = (props) => {
                 </span>
             </h1>
             <p className={"desc text-center"}>
-                Promptkadeh is an open-source AI
+                promptist is an open-source AI
                 prompoting tool for modern world to
-                discover, create and share creative prompts
+                create, share and discover creative prompts
             </p>
             <Feed/>
         </section>
