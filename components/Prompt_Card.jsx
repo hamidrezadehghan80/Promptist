@@ -19,16 +19,17 @@ const Prompt_card = ({post, handleTagClick, handleEdit, handleDelete}) => {
     const router = useRouter();
 
     const handle_profile_click = () => {
-        if(post.creator._id === session?.user.id){
+        if(post.creator._id.toString() === session?.user.id.toString()){
             router.push("/profile");
+        }else{
+            router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
         }
-        router.push(`profile/${post.creator._id}?name=${post.creator.username}`);
     }
 
     return(
         <div className={"prompt_card"}>
             <div className={"flex justify-between items-start gap-5"}>
-                <div className={"flex-1 flex justify-start items-center gap-3 cursor-pointer"}>
+                <div className={"flex-1 flex justify-start items-center gap-3 cursor-pointer"} onClick={handle_profile_click}>
                     <Image
                         src={post.creator.image}
                         alt={"user image"}
@@ -52,7 +53,7 @@ const Prompt_card = ({post, handleTagClick, handleEdit, handleDelete}) => {
                         src={
                         copied === post.prompt
                             ? "/assets/icons/tick.svg"
-                            : "assets/icons/copy.svg"
+                            : "/assets/icons/copy.svg"
                         }
                         width={12}
                         height={12}

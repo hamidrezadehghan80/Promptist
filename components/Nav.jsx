@@ -32,7 +32,7 @@ const Nav = (props) => {
                     height={30}
                 />
                 <p className={"logo_text"}>
-                    Promptopia
+                    Promptist
                 </p>
             </Link>
 
@@ -76,7 +76,7 @@ const Nav = (props) => {
                                                 onClick={() => signIn(provider.id)}
                                                 className={"black_btn"}
                                             >
-                                                Sign In
+                                                Sign In with Github
                                             </button>
                                         )
                                     )
